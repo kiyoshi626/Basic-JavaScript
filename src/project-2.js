@@ -142,6 +142,9 @@ const wordsToSentence = (words) => {
   //   sentence.push(`${words} [i] `);
   // }
   // return sentence;
+  let sentence = '';
+  sentence = words.join(' ');
+  return sentence;
 };
 
 const contains = (arr, item) => {
