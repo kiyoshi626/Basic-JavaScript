@@ -60,23 +60,16 @@ const fizzBuzz = (num) => {
   // if num is divisible by 5 return 'buzz'
   // if num is divisible by 3 & 5 return 'fizzbuzz'
   // otherwise return num
-  if (num % 3 === 0 && num % 5 === 0) {
+  if (num % 5 === 0 && num % 3 === 0) {
     return 'fizzbuzz';
-  } else if (num % 5 === 0) {
-    return 'buzz';
   } else if (num % 3 === 0) {
     return 'fizz';
+  } else if (num % 5 === 0) {
+    return 'buzz';
   }
   return num;
-  // const fizzBuzz = (num) => {
-  //   const by3 = num % 3 === 0;
-  //   const by5 = num % 5 === 0;
-  //   const bitmap = [by5 && by3 ? 'fizzbuzz' : false, by5 === true ? 'buzz' : false, by3 === true ? 'fizz' : false];
-  //   let result = num;
-  //   bitmap.forEach((t, i) => {
-  //     result = t !== false && (result.length < t.length || result.length === undefined) ? t : result;
-  //   });
-  //   return result;
+
+
   // };
 };
 
@@ -90,6 +83,12 @@ const isPrime = (num) => {
 //       if (num % i === 0) return false;
 //       return num !== 1;
 //     }
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) {
+      return false;
+    }
+  }
+  return num > 1;
 };
 
 const returnFirst = (arr) => {
