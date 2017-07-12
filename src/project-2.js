@@ -60,14 +60,24 @@ const fizzBuzz = (num) => {
   // if num is divisible by 5 return 'buzz'
   // if num is divisible by 3 & 5 return 'fizzbuzz'
   // otherwise return num
-  if (num % 3 === 0) {
-    return 'fizz';
+  if (num % 3 === 0 && num % 5 === 0) {
+    return 'fizzbuzz';
   } else if (num % 5 === 0) {
     return 'buzz';
-  } else if (num % 15 === 0) {
-    return 'fizzbuzz';
+  } else if (num % 3 === 0) {
+    return 'fizz';
   }
   return num;
+  // const fizzBuzz = (num) => {
+  //   const by3 = num % 3 === 0;
+  //   const by5 = num % 5 === 0;
+  //   const bitmap = [by5 && by3 ? 'fizzbuzz' : false, by5 === true ? 'buzz' : false, by3 === true ? 'fizz' : false];
+  //   let result = num;
+  //   bitmap.forEach((t, i) => {
+  //     result = t !== false && (result.length < t.length || result.length === undefined) ? t : result;
+  //   });
+  //   return result;
+  // };
 };
 
 const isPrime = (num) => {
@@ -76,35 +86,50 @@ const isPrime = (num) => {
   // hint: a prime number is only evenly divisible by itself and 1
   // hint2: you can solve this using a for loop
   // note: 0 and 1 are NOT considered prime numbers
+// for (let i = 2; i < num; i++) {
+//       if (num % i === 0) return false;
+//       return num !== 1;
+//     }
 };
 
 const returnFirst = (arr) => {
   // return the first item from the array
+  return arr[0];
 };
 
 const returnLast = (arr) => {
   // return the last item of the array
+  return arr[arr.length - 1];
 };
 
 const getArrayLength = (arr) => {
   // return the length of the array
+  return arr.length;
 };
 
 const incrementByOne = (arr) => {
   // arr is an array of integers
   // increase each integer by one
   // return the array
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] += 1;
+  }
+  return arr;
 };
 
 const addItemToArray = (arr, item) => {
   // add the item to the end of the array
   // return the array
+  arr.push(item);
+  return arr;
 };
 
 const addItemToFront = (arr, item) => {
   // add the item to the front of the array
   // return the array
   // hint: use the array method .unshift
+  arr.unshift(item);
+  return arr;
 };
 
 const wordsToSentence = (words) => {
@@ -112,26 +137,50 @@ const wordsToSentence = (words) => {
   // return a string that is all of the words concatenated together
   // spaces need to be between each word
   // example: ['Hello', 'world!'] -> 'Hello world!'
+  // const sentence = [];
+  // for (let i = 0; i < words.length; i++) {
+  //   sentence.push(`${words} [i] `);
+  // }
+  // return sentence;
 };
 
 const contains = (arr, item) => {
   // check to see if item is inside of arr
   // return true if it is, otherwise return false
+  if (arr.indexOf(item) === -1) {
+    return false;
+  }
+  return true;
 };
 
 const addNumbers = (numbers) => {
   // numbers is an array of integers.
   // add all of the integers and return the value
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  } return sum;
 };
 
 const averageTestScore = (testScores) => {
   // testScores is an array.  Iterate over testScores and compute the average.
   // return the average
+  let sum = 0;
+  for (let i = 0; i < testScores.length; i++) {
+    sum += testScores[i];
+  } return sum / testScores.length;
 };
 
 const largestNumber = (numbers) => {
   // numbers is an array of integers
   // return the largest integer
+  // const highestNumber = 0;
+  // for (let i = 0; i < numbers.length; i++) {
+  //   if (highestNumber > numbers[i]) {
+  //     return highestNumber;
+  //   } numbers[i] = highestNumber;
+  // } return highestNumber;
+  return Math.max.apply(null, numbers);
 };
 
 // Do not modify code below this line.
