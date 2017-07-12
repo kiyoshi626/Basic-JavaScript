@@ -3,6 +3,10 @@
 const getBiggest = (x, y) => {
   // x and y are integers.  Return the larger integer
   // if they are the same return either one
+  if (x > y) {
+    return x;
+  }
+  return y;
 };
 
 const greeting = (language) => {
@@ -11,15 +15,29 @@ const greeting = (language) => {
   // language: 'English' -> 'Hello!'
   // language: 'Spanish' -> 'Hola!'
   // if language is undefined return 'Hello!'
+  if (language === 'German') {
+    return 'Guten Tag!';
+  } else if (language === 'Spanish') {
+    return 'Hola!';
+  }
+  return 'Hello!';
 };
 
 const isTenOrFive = (num) => {
   // return true if num is 10 or 5
   // otherwise return false
+  if (num === 10 || num === 5) {
+    return true;
+  }
+  return false;
 };
 
 const isInRange = (num) => {
   // return true if num is less than 50 and greater than 20
+  if (num > 20 && num < 50) {
+    return true;
+  }
+  return false;
 };
 
 const isInteger = (num) => {
@@ -29,6 +47,12 @@ const isInteger = (num) => {
   // -10 -> true
   // otherwise return false
   // hint: you can solve this using Math.floor
+  if (Math.floor(num) >= 1) {
+    return true;
+  } else if (num <= 0) {
+    return true;
+  }
+  return false;
 };
 
 const fizzBuzz = (num) => {
@@ -36,6 +60,14 @@ const fizzBuzz = (num) => {
   // if num is divisible by 5 return 'buzz'
   // if num is divisible by 3 & 5 return 'fizzbuzz'
   // otherwise return num
+  if (num % 3 === 0) {
+    return 'fizz';
+  } else if (num % 5 === 0) {
+    return 'buzz';
+  } else if (num % 15 === 0) {
+    return 'fizzbuzz';
+  }
+  return num;
 };
 
 const isPrime = (num) => {
