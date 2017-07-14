@@ -92,6 +92,8 @@ const addFriend = (user, newFriend) => {
   // user has a property called friends that is an array
   // add newFriend to the end of the friends array
   // return the user object
+  user.friends.push(newFriend);
+  return user;
 };
 
 const setUsersToPremium = (users) => {
@@ -99,6 +101,8 @@ const setUsersToPremium = (users) => {
   // each user object has the property 'isPremium'
   // set each user's isPremium property to true
   // return the users array
+  users.isPremium = [ ];
+  return users.isPremium;
 };
 
 const sumUserPostLikes = (user) => {
